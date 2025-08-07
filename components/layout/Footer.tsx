@@ -48,8 +48,8 @@ export const Footer = () => {
 							</div>
 							<div className='flex items-center space-x-2'>
 								<Instagram className='w-4 h-4 text-[#d44c34]' />
-								<ContactLink href='https://instagram.com/bloombrightnursery'>
-									@bloombrightnursery
+								<ContactLink href='https://www.instagram.com/bloom_bright_nursery/'>
+									@bloom_bright_nursery
 								</ContactLink>
 							</div>
 						</div>
@@ -75,28 +75,40 @@ export const Footer = () => {
 						<h3 className='text-lg font-semibold mb-4'>Quick Links</h3>
 						<div className='space-y-2'>
 							<p>
-								<a
-									href='#about'
-									className='text-gray-400 hover:text-white transition-colors duration-200'
+								<button
+									type='button'
+									className='text-gray-400 hover:text-white transition-colors duration-200 bg-transparent border-none p-0 cursor-pointer'
+									onClick={() => {
+										const el = document.querySelector('#about')
+										if (el) el.scrollIntoView({ behavior: 'smooth' })
+									}}
 								>
 									About Us
-								</a>
+								</button>
 							</p>
 							<p>
-								<a
-									href='#approach'
-									className='text-gray-400 hover:text-white transition-colors duration-200'
+								<button
+									type='button'
+									className='text-gray-400 hover:text-white transition-colors duration-200 bg-transparent border-none p-0 cursor-pointer'
+									onClick={() => {
+										const el = document.querySelector('#approach')
+										if (el) el.scrollIntoView({ behavior: 'smooth' })
+									}}
 								>
 									Our Approach
-								</a>
+								</button>
 							</p>
 							<p>
-								<a
-									href='#schedule-tour'
-									className='text-gray-400 hover:text-white transition-colors duration-200'
+								<button
+									type='button'
+									className='text-gray-400 hover:text-white transition-colors duration-200 bg-transparent border-none p-0 cursor-pointer'
+									onClick={() => {
+										const el = document.querySelector('#schedule-tour')
+										if (el) el.scrollIntoView({ behavior: 'smooth' })
+									}}
 								>
 									Schedule a Tour
-								</a>
+								</button>
 							</p>
 						</div>
 					</div>

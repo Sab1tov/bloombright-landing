@@ -5,6 +5,20 @@ import { Star } from 'lucide-react'
 import Image from 'next/image'
 
 export const HeroSection = () => {
+	// ...existing code...
+	const handleLearnMore = () => {
+		const el = document.querySelector('#about')
+		if (el) {
+			el.scrollIntoView({ behavior: 'smooth' })
+		}
+	}
+
+	const handleSchedule = () => {
+		const el = document.querySelector('#schedule-tour')
+		if (el) {
+			el.scrollIntoView({ behavior: 'smooth' })
+		}
+	}
 	return (
 		<section className='relative py-20 px-4 sm:px-6 lg:px-8'>
 			<div className='max-w-7xl mx-auto'>
@@ -31,16 +45,17 @@ export const HeroSection = () => {
 
 						<div className='flex flex-col sm:flex-row gap-4'>
 							<Button
-								asChild
 								size='lg'
 								className='bg-[#d44c34] hover:bg-[#147c74] text-lg px-8 py-3'
+								onClick={handleSchedule}
 							>
-								<a href='#schedule-tour'>Schedule a Tour</a>
+								Schedule a Tour
 							</Button>
 							<Button
 								size='lg'
 								variant='outline'
 								className='border-[#acd4ac] text-[#147c74] bg-white hover:bg-[#acd4ac] text-lg px-8 py-3'
+								onClick={handleLearnMore}
 							>
 								Learn More
 							</Button>
