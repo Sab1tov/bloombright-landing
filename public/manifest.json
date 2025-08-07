@@ -1,0 +1,16 @@
+{
+	"name": "Bloom Bright Nursery",
+	"short_name": "Bloom Bright",
+	"description": "Montessori Inspired Early Learning in Dubai",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#ffffff",
+	"theme_color": "#4F46E5",
+	"icons": [
+		{
+			"src": "/favicon.ico",
+			"sizes": "16x16 32x32",
+			"type": "image/x-icon"
+		}
+	]
+}

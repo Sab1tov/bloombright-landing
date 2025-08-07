@@ -231,8 +231,15 @@ export const ContactSection = () => {
 											</FormControl>
 											<div className='space-y-1 leading-none'>
 												<FormLabel>
-													I have read and accept bloombright&apos;s data
-													protection policy{' '}
+													I have read and accept{' '}
+													<a
+														href='/privacy-policy'
+														className='text-[#147c74] underline'
+														target='_blank'
+														rel='noopener noreferrer'
+													>
+														bloombright&apos;s data protection policy
+													</a>{' '}
 													<span className='text-[#d44c34] opacity-0 group-data-[invalid=true]:opacity-100 transition-opacity'>
 														*
 													</span>

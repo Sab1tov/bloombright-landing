@@ -1,26 +1,32 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Poppins } from 'next/font/google';
+import type { Metadata } from 'next'
+import { Poppins } from 'next/font/google'
+import './globals.css'
 
-const poppins = Poppins({ 
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  display: 'swap',
-});
+const poppins = Poppins({
+	subsets: ['latin'],
+	weight: ['300', '400', '500', '600', '700'],
+	display: 'swap',
+})
 
 export const metadata: Metadata = {
-  title: 'Bloom Bright Nursery - Montessori Inspired Early Learning in Dubai',
-  description: 'A warm and inspiring nursery in Dubai combining British EYFS with Montessori methods for children aged 8 weeks to 5 years.',
-};
+	title: 'Bloom Bright Nursery - Montessori Inspired Early Learning in Dubai',
+	description:
+		'A warm and inspiring nursery in Dubai combining British EYFS with Montessori methods for children aged 8 weeks to 5 years.',
+	manifest: '/manifest.json',
+	icons: {
+		icon: '/favicon.ico',
+		apple: '/favicon.ico',
+	},
+}
 
 export default function RootLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode
 }) {
-  return (
-    <html lang="en">
-      <body className={poppins.className}>{children}</body>
-    </html>
-  );
+	return (
+		<html lang='en'>
+			<body className={poppins.className}>{children}</body>
+		</html>
+	)
 }
