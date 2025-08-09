@@ -7,7 +7,7 @@ export const FeaturesSection = () => {
 	const features = [
 		{
 			Icon: Users,
-			title: 'Ages 2 months - 4 Years',
+			title: 'Ages 3 months - 4 Years',
 			description:
 				'Nurturing care from infancy through early childhood development',
 		},
