@@ -14,17 +14,6 @@ export const AboutSection = () => {
 							</h2>
 							<div className='space-y-6 text-lg text-gray-600 leading-relaxed'>
 								<p>
-									Bloom Bright Nursery is a warm and inspiring space in Dubai
-									where little learners begin their journey with joy and
-									confidence.
-								</p>
-								<p>
-									We combine the British Early Years Foundation Stage (EYFS)
-									Curriculum with the proven Montessori method to create a
-									balanced, enriching, and nurturing environment for children
-									aged from 8 weeks to 5 years.
-								</p>
-								<p>
 									Our approach allows children to grow freely, discover their
 									strengths, and develop independence. With this foundation,
 									they are well-prepared to transition into British and
