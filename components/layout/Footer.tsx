@@ -25,7 +25,7 @@ export const Footer = () => {
 					{/* Logo and Description */}
 					<div className='col-span-1'>
 						<Image
-							src='/logo-main.PNG'
+							src='/logo-alt-2.PNG'
 							alt='Bloom Bright Nursery Logo'
 							width={48}
 							height={48}
