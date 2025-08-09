@@ -7,13 +7,13 @@ export const FeaturesSection = () => {
 	const features = [
 		{
 			Icon: Users,
-			title: 'Ages 8 Weeks - 5 Years',
+			title: 'Ages 2 months - 4 Years',
 			description:
 				'Nurturing care from infancy through early childhood development',
 		},
 		{
 			Icon: Award,
-			title: 'British EYFS + Montessori',
+			title: 'EYFS curriculum / Montessori approach',
 			description:
 				'Best of both worlds combining structured learning with child-led discovery',
 		},
