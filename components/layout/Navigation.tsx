@@ -26,7 +26,7 @@ export const Navigation = () => {
 					<div className='flex items-center space-x-3'>
 						<button onClick={handleLogoClick} className='focus:outline-none'>
 							<Image
-								src='/logo-main.PNG'
+								src='/logo-alt-2.PNG'
 								alt='Bloom Bright Nursery Logo'
 								width={64}
 								height={64}

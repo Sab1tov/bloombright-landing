@@ -25,14 +25,22 @@ export const HeroSection = () => {
 				<div className='grid lg:grid-cols-2 gap-12 items-center'>
 					<div className='space-y-8'>
 						<div className='space-y-4'>
-							<h1 className='text-5xl lg:text-6xl font-bold text-gray-800 leading-tight'>
+							<h1 className='text-4xl lg:text-4xl font-bold text-gray-800 leading-tight'>
 								Bloom Bright Nursery
 							</h1>
-							<p className='text-xl text-[#d44c34] font-medium'>
+							<p className='text-xl  text-gray-700  font-medium'>
 								Inspired by Montessori
 							</p>
-							<p className='text-2xl text-gray-700 font-light'>
-								Lightening the path for young learners to bloom
+							<p className='text-2xl text-[#d44c34] font-light'>
+								Lightening the path for young learners to bloom{'\u00A0'}
+								<Image
+									src='/logo-icon.png'
+									alt=''
+									aria-hidden='true'
+									className='inline-block align-middle w-5 h-5'
+									width={20}
+									height={20}
+								/>
 							</p>
 						</div>
 
@@ -65,7 +73,7 @@ export const HeroSection = () => {
 					<div className='relative'>
 						<div className='aspect-square bg-gradient-to-br from-[#acd4ac]/50 to-[#147c74]/30 rounded-3xl flex items-center justify-center overflow-hidden'>
 							<Image
-								src='https://images.pexels.com/photos/1912868/pexels-photo-1912868.jpeg?auto=compress&cs=tinysrgb&w=600'
+								src='/hero-photo/IMG_7700.jpg'
 								alt='Happy child learning'
 								width={600}
 								height={600}

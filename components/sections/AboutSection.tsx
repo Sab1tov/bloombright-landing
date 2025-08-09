@@ -39,7 +39,7 @@ export const AboutSection = () => {
 					<div className='relative'>
 						<div className='aspect-[4/3] bg-gradient-to-br from-[#acd4ac]/50 to-[#147c74]/30 rounded-3xl overflow-hidden'>
 							<Image
-								src='https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=600'
+								src='/about-photo/IMG_4957.jpg'
 								alt='Children learning in Montessori environment'
 								width={600}
 								height={450}
