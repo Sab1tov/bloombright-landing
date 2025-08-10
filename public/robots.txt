@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://bloombrightnursery.com/sitemap.xml
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /api/
+
+# Allow all other content
+Allow: /public/
+Allow: /slider-gallery/
+Allow: /about-photo/
+Allow: /hero-photo/
+
+# Crawl delay (optional)
+Crawl-delay: 1

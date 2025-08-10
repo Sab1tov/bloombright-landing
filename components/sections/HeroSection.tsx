@@ -74,11 +74,12 @@ export const HeroSection = () => {
 						<div className='aspect-square bg-gradient-to-br from-[#acd4ac]/50 to-[#147c74]/30 rounded-3xl flex items-center justify-center overflow-hidden'>
 							<Image
 								src='/hero-photo/IMG_7700.jpg'
-								alt='Happy child learning'
+								alt='Happy child learning at Bloom Bright Nursery - Montessori-inspired early education in Dubai'
 								width={600}
 								height={600}
 								className='w-full h-full object-cover rounded-3xl shadow-2xl'
 								priority
+								sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px'
 							/>
 						</div>
 						<div className='absolute -top-4 -right-4 w-24 h-24 bg-[#acd4ac] rounded-full flex items-center justify-center shadow-lg'>
