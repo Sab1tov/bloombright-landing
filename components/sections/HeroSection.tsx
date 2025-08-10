@@ -47,8 +47,8 @@ export const HeroSection = () => {
 						<p className='text-lg text-gray-600 leading-relaxed'>
 							A warm and inspiring space in Dubai where little learners begin
 							their journey with joy and confidence. We combine the British EYFS
-							Curriculum with the proven Montessori method for children aged 8
-							weeks to 5 years.
+							Curriculum with the proven Montessori method for children aged 3
+							months to 4 years.
 						</p>
 
 						<div className='flex flex-col sm:flex-row gap-4'>

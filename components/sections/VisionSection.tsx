@@ -23,10 +23,8 @@ const galleryImages = [
 	'photo-9.jpg',
 	'photo-10.JPG',
 	'photo-11.jpg',
-	'photo-12.jpg',
-	'photo-13.JPG',
-	'photo-14.jpg',
-	'photo-15.jpg',
+	'photo-12.JPG',
+	'photo-13.jpg',
 ]
 
 export const VisionSection = () => {
