@@ -28,10 +28,13 @@ export const Navigation = () => {
 							<Image
 								src='/logo-alt-2.PNG'
 								alt='Bloom Bright Nursery Logo'
-								width={64}
-								height={64}
-								className='h-16 w-auto object-contain'
+								width={150}
+								height={150}
+								className='h-12 w-auto sm:h-14 md:h-16 object-contain'
 								priority
+								sizes='(max-width: 640px) 48px, (max-width: 768px) 56px, 64px'
+								quality={100}
+								style={{ imageRendering: 'high-quality' }}
 							/>
 						</button>
 					</div>

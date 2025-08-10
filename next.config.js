@@ -12,7 +12,6 @@ const nextConfig = {
 	poweredByHeader: false,
 	generateEtags: false,
 	reactStrictMode: true,
-	swcMinify: true,
 	headers: async () => {
 		return [
 			{
