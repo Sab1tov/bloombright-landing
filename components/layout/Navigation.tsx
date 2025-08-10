@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
@@ -25,15 +24,14 @@ export const Navigation = () => {
 				<div className='flex justify-between items-center py-4'>
 					<div className='flex items-center space-x-3'>
 						<button onClick={handleLogoClick} className='focus:outline-none'>
-							<Image
-								src='/logo-alt-2.PNG'
+							<img
+								src='/logo-alt-2.svg'
 								alt='Bloom Bright Nursery Logo'
-								width={200}
-								height={200}
-								className='h-12 w-auto sm:h-14 md:h-16 object-contain'
-								priority
-								sizes='(max-width: 640px) 48px, (max-width: 768px) 56px, 64px'
-								quality={95}
+								className='h-12 w-auto sm:h-14 md:h-16'
+								style={{
+									imageRendering: 'crisp-edges',
+									transform: 'translateZ(0)',
+								}}
 							/>
 						</button>
 					</div>
