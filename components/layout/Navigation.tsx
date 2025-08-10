@@ -34,7 +34,7 @@ export const Navigation = () => {
 								priority
 								sizes='(max-width: 640px) 48px, (max-width: 768px) 56px, 64px'
 								quality={100}
-								style={{ imageRendering: 'high-quality' }}
+								style={{ imageRendering: 'crisp-edges' }}
 							/>
 						</button>
 					</div>
