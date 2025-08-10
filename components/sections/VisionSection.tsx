@@ -16,14 +16,14 @@ const galleryImages = [
 	'photo-2.jpg',
 	'photo-3.jpg',
 	'photo-4.jpg',
-	'photo-5.JPG',
+	'photo-5.jpg',
 	'photo-6.jpg',
 	'photo-7.jpg',
 	'photo-8.jpg',
 	'photo-9.jpg',
-	'photo-10.JPG',
+	'photo-10.jpg',
 	'photo-11.jpg',
-	'photo-12.JPG',
+	'photo-12.jpg',
 	'photo-13.jpg',
 ]
 
@@ -36,6 +36,17 @@ export const VisionSection = () => {
 			loop: true,
 		})
 	)
+
+	const [imageErrors, setImageErrors] = React.useState<Set<string>>(new Set())
+
+	const handleImageError = (fileName: string) => {
+		setImageErrors(prev => new Set(prev).add(fileName))
+		console.warn(`Failed to load image: ${fileName}`)
+	}
+
+	// Фильтруем изображения, которые не загрузились
+	const validImages = galleryImages.filter(img => !imageErrors.has(img))
+
 	return (
 		<section
 			id='approach'
@@ -82,30 +93,37 @@ export const VisionSection = () => {
 
 					<div className='relative'>
 						<div className='aspect-[16/10] sm:aspect-[4/3] md:aspect-[3/2] lg:aspect-square rounded-3xl overflow-hidden relative bg-white/40'>
-							<Carousel
-								className='h-full'
-								opts={{ loop: true }}
-								plugins={[plugin.current]}
-							>
-								<CarouselContent className='h-full'>
-									{galleryImages.map((fileName, index) => (
-										<CarouselItem key={fileName} className='h-full'>
-											<div className='relative h-full w-full'>
-												<Image
-													src={`/slider-gallery/${fileName}`}
-													alt={`Gallery photo ${index + 1}`}
-													fill
-													sizes='(min-width: 1024px) 600px, 100vw'
-													className='object-cover rounded-3xl'
-													priority={index === 0}
-												/>
-											</div>
-										</CarouselItem>
-									))}
-								</CarouselContent>
-								<CarouselPrevious className='bg-white/80 hover:bg-white shadow-md' />
-								<CarouselNext className='bg-white/80 hover:bg-white shadow-md' />
-							</Carousel>
+							{validImages.length > 0 ? (
+								<Carousel
+									className='h-full'
+									opts={{ loop: true }}
+									plugins={[plugin.current]}
+								>
+									<CarouselContent className='h-full'>
+										{validImages.map((fileName, index) => (
+											<CarouselItem key={fileName} className='h-full'>
+												<div className='relative h-full w-full'>
+													<Image
+														src={`/slider-gallery/${fileName}`}
+														alt={`Gallery photo ${index + 1}`}
+														fill
+														sizes='(min-width: 1024px) 600px, 100vw'
+														className='object-cover rounded-3xl'
+														priority={index === 0}
+														onError={() => handleImageError(fileName)}
+													/>
+												</div>
+											</CarouselItem>
+										))}
+									</CarouselContent>
+									<CarouselPrevious className='bg-white/80 hover:bg-white shadow-md' />
+									<CarouselNext className='bg-white/80 hover:bg-white shadow-md' />
+								</Carousel>
+							) : (
+								<div className='flex items-center justify-center h-full bg-gray-100 rounded-3xl'>
+									<p className='text-gray-500'>Loading gallery...</p>
+								</div>
+							)}
 						</div>
 					</div>
 				</div>
