@@ -20,7 +20,12 @@ import {
 	SelectValue,
 } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
+import {
+	submitFormToGoogleSheets,
+	type FormData as CustomFormData,
+} from '@/lib/form-submission'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
 
@@ -42,6 +47,12 @@ const formSchema = z.object({
 })
 
 export const ContactSection = () => {
+	const [isSubmitting, setIsSubmitting] = useState(false)
+	const [submitStatus, setSubmitStatus] = useState<
+		'idle' | 'success' | 'error'
+	>('idle')
+	const [submitMessage, setSubmitMessage] = useState('')
+
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
@@ -54,8 +65,32 @@ export const ContactSection = () => {
 		},
 	})
 
-	function onSubmit(values: z.infer<typeof formSchema>) {
-		console.log(values)
+	async function onSubmit(values: z.infer<typeof formSchema>) {
+		setIsSubmitting(true)
+		setSubmitStatus('idle')
+		setSubmitMessage('')
+
+		try {
+			const result = await submitFormToGoogleSheets(values as CustomFormData)
+
+			if (result.success) {
+				setSubmitStatus('success')
+				setSubmitMessage('Thank you! Your message has been sent successfully.')
+				form.reset()
+			} else {
+				setSubmitStatus('error')
+				setSubmitMessage(
+					result.error || 'Something went wrong. Please try again.'
+				)
+			}
+		} catch (error) {
+			setSubmitStatus('error')
+			setSubmitMessage(
+				'Network error. Please check your connection and try again.'
+			)
+		} finally {
+			setIsSubmitting(false)
+		}
 	}
 
 	return (
@@ -249,12 +284,25 @@ export const ContactSection = () => {
 									)}
 								/>
 
+								{submitStatus === 'success' && (
+									<div className='p-4 bg-green-50 border border-green-200 rounded-lg'>
+										<p className='text-green-800'>{submitMessage}</p>
+									</div>
+								)}
+
+								{submitStatus === 'error' && (
+									<div className='p-4 bg-red-50 border border-red-200 rounded-lg'>
+										<p className='text-red-800'>{submitMessage}</p>
+									</div>
+								)}
+
 								<Button
 									type='submit'
 									size='lg'
 									className='bg-[#d44c34] hover:bg-[#147c74] text-lg px-12 py-4'
+									disabled={isSubmitting}
 								>
-									Submit
+									{isSubmitting ? 'Sending...' : 'Submit'}
 								</Button>
 							</form>
 						</Form>
