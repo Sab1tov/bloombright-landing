@@ -8,6 +8,10 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "overrides": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@next/swc-wasm-nodejs": "15.4.6",
