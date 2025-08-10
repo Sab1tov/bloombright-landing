@@ -1,7 +1,6 @@
 'use client'
 
 import { Instagram, MapPin, Phone } from 'lucide-react'
-import Image from 'next/image'
 
 interface ContactLinkProps {
 	href: string
@@ -24,12 +23,14 @@ export const Footer = () => {
 				<div className='grid md:grid-cols-4 gap-8 mb-8'>
 					{/* Logo and Description */}
 					<div className='col-span-1'>
-						<Image
-							src='/logo-alt-2.PNG'
+						<img
+							src='/logo-alt-2.svg'
 							alt='Bloom Bright Nursery Logo'
-							width={48}
-							height={48}
-							className='h-12 w-auto object-contain mb-4'
+							className='h-12 w-auto mb-4'
+							style={{
+								imageRendering: 'crisp-edges',
+								transform: 'translateZ(0)',
+							}}
 						/>
 						<p className='text-gray-400 text-sm'>
 							Lightening the path for young learners to bloom
