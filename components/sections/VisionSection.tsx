@@ -6,8 +6,8 @@ import {
 	CarouselItem,
 	CarouselNext,
 	CarouselPrevious,
-	type CarouselApi,
 } from '@/components/ui/carousel'
+import Autoplay from 'embla-carousel-autoplay'
 import Image from 'next/image'
 import React from 'react'
 
@@ -28,16 +28,14 @@ const galleryImages = [
 ]
 
 export const VisionSection = () => {
-	const [carouselApi, setCarouselApi] = React.useState<CarouselApi | null>(null)
-	const [isPaused, setIsPaused] = React.useState(false)
-
-	React.useEffect(() => {
-		if (!carouselApi || isPaused) return
-		const id = setInterval(() => {
-			carouselApi.scrollNext()
-		}, 3000)
-		return () => clearInterval(id)
-	}, [carouselApi, isPaused])
+	const plugin = React.useRef(
+		Autoplay({
+			delay: 3000,
+			stopOnInteraction: false,
+			stopOnMouseEnter: true,
+			loop: true,
+		})
+	)
 	return (
 		<section
 			id='approach'
@@ -87,9 +85,7 @@ export const VisionSection = () => {
 							<Carousel
 								className='h-full'
 								opts={{ loop: true }}
-								setApi={setCarouselApi}
-								onMouseEnter={() => setIsPaused(true)}
-								onMouseLeave={() => setIsPaused(false)}
+								plugins={[plugin.current]}
 							>
 								<CarouselContent className='h-full'>
 									{galleryImages.map((fileName, index) => (
