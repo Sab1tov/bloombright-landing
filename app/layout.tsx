@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 		'A warm and inspiring nursery in Dubai combining British EYFS with Montessori methods for children aged 8 weeks to 5 years.',
 	manifest: '/manifest.json',
 	icons: {
-		icon: '/favicon.ico',
-		apple: '/favicon.ico',
+		icon: '/icon.ico',
+		apple: '/icon.ico',
 	},
 }
 

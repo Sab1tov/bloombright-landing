@@ -1,5 +1,6 @@
 'use client'
 
+import { submitContactForm } from '@/app/actions'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import {
@@ -20,12 +21,8 @@ import {
 	SelectValue,
 } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
-import {
-	submitFormToGoogleSheets,
-	type FormData as CustomFormData,
-} from '@/lib/form-submission'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useState } from 'react'
+import { useState, useTransition } from 'react'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
 
@@ -47,7 +44,7 @@ const formSchema = z.object({
 })
 
 export const ContactSection = () => {
-	const [isSubmitting, setIsSubmitting] = useState(false)
+	const [isPending, startTransition] = useTransition()
 	const [submitStatus, setSubmitStatus] = useState<
 		'idle' | 'success' | 'error'
 	>('idle')
@@ -65,32 +62,34 @@ export const ContactSection = () => {
 		},
 	})
 
-	async function onSubmit(values: z.infer<typeof formSchema>) {
-		setIsSubmitting(true)
+	function onSubmit(values: z.infer<typeof formSchema>) {
 		setSubmitStatus('idle')
 		setSubmitMessage('')
 
-		try {
-			const result = await submitFormToGoogleSheets(values as CustomFormData)
+		startTransition(async () => {
+			try {
+				const result = await submitContactForm(values)
 
-			if (result.success) {
-				setSubmitStatus('success')
-				setSubmitMessage('Thank you! Your message has been sent successfully.')
-				form.reset()
-			} else {
+				if (result.success) {
+					setSubmitStatus('success')
+					setSubmitMessage(
+						result.message ||
+							'Thank you! Your message has been sent successfully.'
+					)
+					form.reset()
+				} else {
+					setSubmitStatus('error')
+					setSubmitMessage(
+						result.error || 'Something went wrong. Please try again.'
+					)
+				}
+			} catch (error) {
 				setSubmitStatus('error')
 				setSubmitMessage(
-					result.error || 'Something went wrong. Please try again.'
+					'Network error. Please check your connection and try again.'
 				)
 			}
-		} catch (error) {
-			setSubmitStatus('error')
-			setSubmitMessage(
-				'Network error. Please check your connection and try again.'
-			)
-		} finally {
-			setIsSubmitting(false)
-		}
+		})
 	}
 
 	return (
@@ -300,9 +299,9 @@ export const ContactSection = () => {
 									type='submit'
 									size='lg'
 									className='bg-[#d44c34] hover:bg-[#147c74] text-lg px-12 py-4'
-									disabled={isSubmitting}
+									disabled={isPending}
 								>
-									{isSubmitting ? 'Sending...' : 'Submit'}
+									{isPending ? 'Sending...' : 'Submit'}
 								</Button>
 							</form>
 						</Form>

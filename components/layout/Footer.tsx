@@ -29,7 +29,7 @@ export const Footer = () => {
 							alt='Bloom Bright Nursery Logo'
 							width={48}
 							height={48}
-							className='h-12 w-12 object-contain mb-4'
+							className='h-12 w-auto object-contain mb-4'
 						/>
 						<p className='text-gray-400 text-sm'>
 							Lightening the path for young learners to bloom
