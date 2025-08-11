@@ -36,14 +36,14 @@ export const metadata: Metadata = {
 		address: false,
 		telephone: false,
 	},
-	metadataBase: new URL('https://bloombrightnursery.com'),
+	  metadataBase: new URL('https://bloombrightnursery.ae'),
 	alternates: {
 		canonical: '/',
 	},
 	openGraph: {
 		type: 'website',
 		locale: 'en_US',
-		url: 'https://bloombrightnursery.com',
+		    url: 'https://bloombrightnursery.ae',
 		title: 'Bloom Bright Nursery - Montessori Inspired Early Learning in Dubai',
 		description: 'Bloom Bright Nursery offers Montessori-inspired early learning in Dubai for children aged 8 weeks to 5 years. Combining British EYFS with Montessori methods in a warm, nurturing environment.',
 		siteName: 'Bloom Bright Nursery',

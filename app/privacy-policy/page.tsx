@@ -285,7 +285,7 @@ export default function PrivacyPolicy() {
 						on the Child Portal or contact us:
 					</p>
 					<ul className='list-disc ml-6 mb-2'>
-						<li>Email: privacy@bloombrightnursery.com</li>
+						            <li>Email: privacy@bloombrightnursery.ae</li>
 						<li>
 							Post: DPO, Bloom Bright Nursery, P.O. Box 37885, Dubai, United
 							Arab Emirates
