@@ -46,9 +46,9 @@ export const HeroSection = () => {
 
 						<p className='text-lg text-gray-600 leading-relaxed'>
 							A warm and inspiring space where little learners begin their
-							journey with joy and confidence. We combine the British EYFS
-							Curriculum with the proven Montessori method for children aged 3
-							months to 4 years.
+							journey with joy and confidence. We use a bilingual system that
+							integrates the British EYFS Curriculum and the proven Montessori
+							approach for children aged 3 months to 4 years.
 						</p>
 
 						<div className='bg-white/60 rounded-lg p-6'>
