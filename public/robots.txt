@@ -2,7 +2,16 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://bloombrightnursery.com/sitemap.xml
+Sitemap: https://bloombrightnursery.ae/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Allow search engines to index all content
+Allow: /public/
+Allow: /slider-gallery/
+Allow: /about-photo/
+Allow: /hero-photo/
 
 # Disallow admin areas (if any)
 Disallow: /admin/
