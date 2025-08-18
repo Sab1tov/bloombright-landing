@@ -1,6 +1,6 @@
 'use client'
 
-import { Instagram, MapPin, Phone } from 'lucide-react'
+import { Instagram, Mail, MapPin, Phone } from 'lucide-react'
 
 interface ContactLinkProps {
 	href: string
@@ -51,6 +51,12 @@ export const Footer = () => {
 								<Instagram className='w-4 h-4 text-[#d44c34]' />
 								<ContactLink href='https://www.instagram.com/bloom_bright_nursery/'>
 									@bloom_bright_nursery
+								</ContactLink>
+							</div>
+							<div className='flex items-center space-x-2'>
+								<Mail className='w-4 h-4 text-[#d44c34]' />
+								<ContactLink href='mailto:bloombrightnursery@gmail.com'>
+									bloombrightnursery@gmail.com
 								</ContactLink>
 							</div>
 						</div>

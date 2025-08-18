@@ -56,8 +56,7 @@ export const HeroSection = () => {
 								Languages offered:
 							</p>
 							<p className='text-base text-gray-600'>
-								English (main language of instruction), Arabic, and French
-								classes.
+								English, Arabic, and French classes.
 							</p>
 						</div>
 
