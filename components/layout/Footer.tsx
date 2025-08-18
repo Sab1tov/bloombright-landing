@@ -54,7 +54,10 @@ export const Footer = () => {
 								</ContactLink>
 							</div>
 							<div className='flex items-center space-x-2'>
-								<Mail className='w-4 h-4 text-[#d44c34]' />
+								<Mail
+									className='w-4 h-4 text-[#d44c34] flex-shrink-0'
+									strokeWidth={2.25}
+								/>
 								<ContactLink href='mailto:bloombrightnursery@gmail.com'>
 									bloombrightnursery@gmail.com
 								</ContactLink>
