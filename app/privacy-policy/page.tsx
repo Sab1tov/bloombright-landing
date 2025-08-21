@@ -1,6 +1,7 @@
 import { Footer } from '@/components/layout/Footer'
 import { Navigation } from '@/components/layout/Navigation'
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
 	alternates: {
@@ -13,8 +14,8 @@ export default function PrivacyPolicy() {
 		<div className='min-h-screen bg-gradient-to-br from-green-50 via-teal-50 to-emerald-50'>
 			<Navigation />
 			<main className='max-w-3xl mx-auto px-4 py-12 text-gray-800'>
-				<button
-					onClick={() => (window.location.href = '/')}
+				<Link
+					href='/'
 					className='mb-8 flex items-center gap-2 px-3 py-1.5 border border-gray-300 bg-white hover:bg-gray-100 text-gray-600 rounded-lg shadow-sm font-medium transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#d44c34] focus:ring-offset-2 w-fit'
 				>
 					<svg
@@ -39,7 +40,7 @@ export default function PrivacyPolicy() {
 						/>
 					</svg>
 					<span>Back</span>
-				</button>
+				</Link>
 				<h1 className='text-4xl font-bold mb-8'>Privacy & Cookies Policy</h1>
 				<section className='mb-8'>
 					<h2 className='text-2xl font-semibold mb-4'>1. Introduction</h2>
