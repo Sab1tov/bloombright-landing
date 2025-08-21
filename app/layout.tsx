@@ -39,9 +39,6 @@ export const metadata: Metadata = {
 		telephone: false,
 	},
 	metadataBase: new URL('https://bloombrightnursery.ae'),
-	alternates: {
-		canonical: '/',
-	},
 	openGraph: {
 		type: 'website',
 		locale: 'en_US',

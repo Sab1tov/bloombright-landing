@@ -1,6 +1,12 @@
-'use client'
 import { Footer } from '@/components/layout/Footer'
 import { Navigation } from '@/components/layout/Navigation'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+	alternates: {
+		canonical: 'https://bloombrightnursery.ae/privacy-policy',
+	},
+}
 
 export default function PrivacyPolicy() {
 	return (
@@ -285,7 +291,7 @@ export default function PrivacyPolicy() {
 						on the Child Portal or contact us:
 					</p>
 					<ul className='list-disc ml-6 mb-2'>
-						            <li>Email: privacy@bloombrightnursery.ae</li>
+						<li>Email: privacy@bloombrightnursery.ae</li>
 						<li>
 							Post: DPO, Bloom Bright Nursery, P.O. Box 37885, Dubai, United
 							Arab Emirates

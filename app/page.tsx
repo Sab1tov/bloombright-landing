@@ -1,5 +1,3 @@
-'use client'
-
 import { Footer } from '@/components/layout/Footer'
 import { Navigation } from '@/components/layout/Navigation'
 import { AboutSection } from '@/components/sections/AboutSection'
@@ -7,7 +5,14 @@ import { ContactSection } from '@/components/sections/ContactSection'
 import { FeaturesSection } from '@/components/sections/FeaturesSection'
 import { HeroSection } from '@/components/sections/HeroSection'
 import { VisionSection } from '@/components/sections/VisionSection'
+import type { Metadata } from 'next'
 import Script from 'next/script'
+
+export const metadata: Metadata = {
+	alternates: {
+		canonical: 'https://bloombrightnursery.ae/',
+	},
+}
 
 export default function Home() {
 	return (
