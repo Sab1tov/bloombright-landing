@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
+import Script from 'next/script'
 import { Analytics } from './analytics'
 import './globals.css'
 
@@ -105,6 +106,19 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={poppins.className}>
+				<Script
+					src='https://www.googletagmanager.com/gtag/js?id=AW-17472095153'
+					strategy='afterInteractive'
+				/>
+				<Script id='gtag-init' strategy='afterInteractive'>
+					{`
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);} 
+						gtag('js', new Date());
+
+						gtag('config', 'AW-17472095153');
+					`}
+				</Script>
 				{children}
 				<Analytics />
 			</body>

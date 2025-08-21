@@ -1,6 +1,8 @@
 'use client'
 
 import { Instagram, Mail, MapPin, Phone } from 'lucide-react'
+// WhatsApp brand icon rendered inline as SVG to avoid external icon deps
+import Image from 'next/image'
 
 interface ContactLinkProps {
 	href: string
@@ -43,7 +45,23 @@ export const Footer = () => {
 						<div className='space-y-2'>
 							<div className='flex items-center space-x-2'>
 								<Phone className='w-4 h-4 text-[#d44c34]' />
-								<ContactLink href='tel:+971585613250'>
+								<ContactLink href='tel:+971043273061'>
+									+971 04 327 3061
+								</ContactLink>
+							</div>
+							<div className='flex items-center space-x-2'>
+								<Image
+									src='/icons/whatsapp.svg'
+									alt='WhatsApp'
+									width={16}
+									height={16}
+									className='text-[#d44c34] flex-shrink-0'
+									style={{
+										imageRendering: 'crisp-edges',
+										transform: 'translateZ(0)',
+									}}
+								/>
+								<ContactLink href='https://wa.me/971585613250'>
 									+971 58 561 3250
 								</ContactLink>
 							</div>
